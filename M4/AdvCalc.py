@@ -81,9 +81,6 @@ class AdvCalc(MyCalc):
         print("z score for {} is : {}".format(data, zscores))
         return zscores
 
-obj = AdvCalc()
-import pdb;pdb.set_trace()
-
 class TestAdvCalc(unittest.TestCase):
     def test_addition(self):
         adv_cal = AdvCalc()

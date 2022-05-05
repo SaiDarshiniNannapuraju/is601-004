@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask 5 stats</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <form style="text-align: center;" method="post" action="{{ url_for('result') }}" id="calculator_form">
+        <label for="Input">Input1:</label>
+        <input type="text" name="input" id="Input1">
+        <br/>
+        <br/>
+        <label for="operation">Select any function</label>
+        <select id="operation" name="operation">
+            <option value="mean">Mean</option>
+            <option value="median">Median</option>
+            <option value="mode">Mode</option>
+            <option value="std_dev">Standard Deviation</option>
+            <option value="z_score">Z score</option>
+        </select>
+        <br/>
+        <br/>
+        <input type="submit" value="Submit"/>
+    </form>
+    {% if calculation_success == True %}
+        <br/>
+        <p>{{message}}</p>
+    {% endif %}
+    {% if calculation_success == False %}
+        <br/>
+        <p>{{message}}</p>
+    {% endif %}
+</body>
+</html>

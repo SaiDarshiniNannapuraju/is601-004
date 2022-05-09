@@ -8,7 +8,6 @@ from cart.Cart import Cart
 
 def order_create(request):
     cart = Cart(request)
-    import pdb;pdb.set_trace()
     if request.method == 'POST':
         form = OrderCreateForm(request.POST)
         if form.is_valid():
@@ -22,5 +21,4 @@ def order_create(request):
                       {'order': order})
     else:
         form = OrderCreateForm()
-        import pdb;pdb.set_trace()
     return render(request, 'orders/create.html', {'form': form})
